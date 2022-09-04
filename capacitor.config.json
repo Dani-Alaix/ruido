@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "ruido",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

@@ -1,0 +1,8 @@
+{
+  "name": "ruido",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "56dd3109"
+}
