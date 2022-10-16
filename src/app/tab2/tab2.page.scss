@@ -1,0 +1,58 @@
+
+.main-content {
+    ion-button{
+        --padding-end: 5px;
+        --padding-start: 5px;
+        &.arrow-left {
+            position: absolute;
+            left: 0;
+            top: 45%;
+            z-index: 2;
+        }
+        &.arrow-right {
+            position: absolute;
+            right: 0;
+            top: 45%;
+            z-index: 2;
+        }
+    }
+    ion-slide {
+        text-align: left;
+        max-width: 350px;
+        min-width: 350px;
+        margin-left: 20px;
+        ion-card{
+            cursor: pointer;
+            position: relative;
+            margin: 0.5rem;
+            width: 310px;
+            height: 310px;
+            overflow: hidden;
+            img {
+                object-fit: cover;
+                min-height: 100%;
+                min-width: 100%;
+            }
+        }
+    }
+}
+.comments {
+    max-width: 800px;
+    margin: 0 auto;
+    .posts {
+        .title {
+            ion-text {
+                margin-left: 1rem;
+                h3 {
+                    margin: 0;
+                    color: var(--ion-color-secondary) ;
+                }
+                p {
+                    margin: 0;
+                    font-size: 0.9rem;
+                    color: #808080;
+                }
+            }
+        }
+    }
+}
