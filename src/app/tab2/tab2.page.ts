@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonSlides } from '@ionic/angular';
+import { MediaService } from '../core/services/media.service';
 
 @Component({
   selector: 'app-tab2',
@@ -7,95 +8,103 @@ import { IonSlides } from '@ionic/angular';
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page {
-
-  @ViewChild('slides') slides: IonSlides;
   @ViewChild('slider') slider: IonSlides;
 
   allPhotos = [
     {
       id: 1,
       previewSrc: '../../assets/photos/1665871422376.jpg',
-      comments: [{
-        profile: 'https://picsum.photos/50/50',
-        user: 'Daniela Cubides',
-        comment: 'consectetur adipiscing elit. Suspendisse tincidunt turpis sit amet massa egestas, in vestibulum lorem scelerisque',
-        like: false
-      },  {
-        profile: 'https://picsum.photos/50/50',
-        user: 'Diego Sánchez',
-        comment: 'consectetur adipiscing elit. Suspendisse tincidunt turpis sit amet massa egestas, in vestibulum lorem scelerisque',
-        like: false
-      }, {
-        profile: 'https://picsum.photos/50/50',
-        user: 'Ernesto Perez',
-        comment: 'consectetur adipiscing elit. Suspendisse tincidunt turpis sit amet massa egestas, in vestibulum lorem scelerisque',
-        like: false
-      }]
+      comments: [
+        {
+          profile: 'https://picsum.photos/50/50',
+          user: 'Daniela Cubides',
+          comment: 'consectetur adipiscing elit. Suspendisse tincidunt turpis sit amet massa egestas, in vestibulum lorem scelerisque',
+          like: false
+        }, {
+          profile: 'https://picsum.photos/50/50',
+          user: 'Diego Sánchez',
+          comment: 'consectetur adipiscing elit. Suspendisse tincidunt turpis sit amet massa egestas, in vestibulum lorem scelerisque',
+          like: false
+        }, {
+          profile: 'https://picsum.photos/50/50',
+          user: 'Ernesto Perez',
+          comment: 'consectetur adipiscing elit. Suspendisse tincidunt turpis sit amet massa egestas, in vestibulum lorem scelerisque',
+          like: false
+        }
+      ]
     },
     {
       id: 2,
       previewSrc: '../../assets/photos/1665871422388.jpg',
-      comments: [{
-        profile: 'https://picsum.photos/50/50',
-        user: 'Diego Sánchez',
-        comment: 'consectetur adipiscing elit. Suspendisse tincidunt turpis sit amet massa egestas, in vestibulum lorem scelerisque',
-        like: false
-      }, {
-        profile: 'https://picsum.photos/50/50',
-        user: 'Ernesto Perez',
-        comment: 'consectetur adipiscing elit. Suspendisse tincidunt turpis sit amet massa egestas, in vestibulum lorem scelerisque',
-        like: false
-      }]
+      comments: [
+        {
+          profile: 'https://picsum.photos/50/50',
+          user: 'Diego Sánchez',
+          comment: 'consectetur adipiscing elit. Suspendisse tincidunt turpis sit amet massa egestas, in vestibulum lorem scelerisque',
+          like: false
+        }, {
+          profile: 'https://picsum.photos/50/50',
+          user: 'Ernesto Perez',
+          comment: 'consectetur adipiscing elit. Suspendisse tincidunt turpis sit amet massa egestas, in vestibulum lorem scelerisque',
+          like: false
+        }
+      ]
     },
     {
       id: 3,
       previewSrc: '../../assets/photos/DSC_0069.jpg',
-      comments: [{
-        profile: 'https://picsum.photos/50/50',
-        user: 'Daniela Cubides',
-        comment: 'consectetur adipiscing elit. Suspendisse tincidunt turpis sit amet massa egestas, in vestibulum lorem scelerisque',
-        like: false
-      }, {
-        profile: 'https://picsum.photos/50/50',
-        user: 'Ernesto Perez',
-        comment: 'consectetur adipiscing elit. Suspendisse tincidunt turpis sit amet massa egestas, in vestibulum lorem scelerisque',
-        like: false
-      }]
+      comments: [
+        {
+          profile: 'https://picsum.photos/50/50',
+          user: 'Daniela Cubides',
+          comment: 'consectetur adipiscing elit. Suspendisse tincidunt turpis sit amet massa egestas, in vestibulum lorem scelerisque',
+          like: false
+        }, {
+          profile: 'https://picsum.photos/50/50',
+          user: 'Ernesto Perez',
+          comment: 'consectetur adipiscing elit. Suspendisse tincidunt turpis sit amet massa egestas, in vestibulum lorem scelerisque',
+          like: false
+        }
+      ]
     },
     {
       id: 4,
       previewSrc: '../../assets/photos/DSC_0245.JPG',
-      comments: [{
-        profile: 'https://picsum.photos/50/50',
-        user: 'Daniela Cubides',
-        comment: 'consectetur adipiscing elit. Suspendisse tincidunt turpis sit amet massa egestas, in vestibulum lorem scelerisque',
-        like: false
-      },  {
-        profile: 'https://picsum.photos/50/50',
-        user: 'Diego Sánchez',
-        comment: 'consectetur adipiscing elit. Suspendisse tincidunt turpis sit amet massa egestas, in vestibulum lorem scelerisque',
-        like: false
-      }, {
-        profile: 'https://picsum.photos/50/50',
-        user: 'Ernesto Perez',
-        comment: 'consectetur adipiscing elit. Suspendisse tincidunt turpis sit amet massa egestas, in vestibulum lorem scelerisque',
-        like: false
-      }]
+      comments: [
+        {
+          profile: 'https://picsum.photos/50/50',
+          user: 'Daniela Cubides',
+          comment: 'consectetur adipiscing elit. Suspendisse tincidunt turpis sit amet massa egestas, in vestibulum lorem scelerisque',
+          like: false
+        }, {
+          profile: 'https://picsum.photos/50/50',
+          user: 'Diego Sánchez',
+          comment: 'consectetur adipiscing elit. Suspendisse tincidunt turpis sit amet massa egestas, in vestibulum lorem scelerisque',
+          like: false
+        }, {
+          profile: 'https://picsum.photos/50/50',
+          user: 'Ernesto Perez',
+          comment: 'consectetur adipiscing elit. Suspendisse tincidunt turpis sit amet massa egestas, in vestibulum lorem scelerisque',
+          like: false
+        }
+      ]
     },
     {
       id: 5,
       previewSrc: '../../assets/photos/DSC_0284.jpg',
-      comments: [{
-        profile: 'https://picsum.photos/50/50',
-        user: 'Daniela Cubides',
-        comment: 'consectetur adipiscing elit. Suspendisse tincidunt turpis sit amet massa egestas, in vestibulum lorem scelerisque',
-        like: false
-      },  {
-        profile: 'https://picsum.photos/50/50',
-        user: 'Diego Sánchez',
-        comment: 'consectetur adipiscing elit. Suspendisse tincidunt turpis sit amet massa egestas, in vestibulum lorem scelerisque',
-        like: false
-      }]
+      comments: [
+        {
+          profile: 'https://picsum.photos/50/50',
+          user: 'Daniela Cubides',
+          comment: 'consectetur adipiscing elit. Suspendisse tincidunt turpis sit amet massa egestas, in vestibulum lorem scelerisque',
+          like: false
+        }, {
+          profile: 'https://picsum.photos/50/50',
+          user: 'Diego Sánchez',
+          comment: 'consectetur adipiscing elit. Suspendisse tincidunt turpis sit amet massa egestas, in vestibulum lorem scelerisque',
+          like: false
+        }
+      ]
     },
     /* {
       id: 6,
@@ -229,22 +238,77 @@ export class Tab2Page {
     }, */
   ]
 
-  currentImage;
+  allAudios = [
+    {
+      id: 1,
+      name: 'Sin nombre',
+      previewAudio: '',
+      comments: [
+        {
+          profile: 'https://picsum.photos/50/50',
+          user: 'Daniela Cubides',
+          comment: 'consectetur adipiscing elit. Suspendisse tincidunt turpis sit amet massa egestas, in vestibulum lorem scelerisque',
+          like: false
+        }, {
+          profile: 'https://picsum.photos/50/50',
+          user: 'Diego Sánchez',
+          comment: 'consectetur adipiscing elit. Suspendisse tincidunt turpis sit amet massa egestas, in vestibulum lorem scelerisque',
+          like: false
+        }, {
+          profile: 'https://picsum.photos/50/50',
+          user: 'Ernesto Perez',
+          comment: 'consectetur adipiscing elit. Suspendisse tincidunt turpis sit amet massa egestas, in vestibulum lorem scelerisque',
+          like: false
+        }
+      ]
+    },
+    {
+      id: 2,
+      name: 'Sin nombre',
+      previewAudio: '',
+      comments: [
+        {
+          profile: 'https://picsum.photos/50/50',
+          user: 'Diego Sánchez',
+          comment: 'consectetur adipiscing elit. Suspendisse tincidunt turpis sit amet massa egestas, in vestibulum lorem scelerisque',
+          like: false
+        }, {
+          profile: 'https://picsum.photos/50/50',
+          user: 'Ernesto Perez',
+          comment: 'consectetur adipiscing elit. Suspendisse tincidunt turpis sit amet massa egestas, in vestibulum lorem scelerisque',
+          like: false
+        }
+      ]
+    }
+  ]
 
-  constructor() { }
+  currentImage;
+  currentAudio;
+  playAudio = [];
+
+  constructor(private mediaService: MediaService) { }
 
   //ngOnInit() { }
 
-  selectImg(photo){
+  selectImg(photo) {
     console.log("select photo:", photo);
     this.currentImage = photo;
   }
-
-  liked(comment){
-    comment.like=!comment.like;
-    if(comment.like) comment.likes++;
-    else if(!comment.like) comment.likes--;
+  selectAudio(audio) {
+    console.log("select audio:", audio);
+    this.currentAudio = audio;
   }
 
+  getFiles() {
+    for (let i = 0; i < this.allAudios.length; i++) {
+      this.playAudio[i] = `data:${this.mediaService.guessAudioBase64MimeType(this.allAudios[i].previewAudio)};base64,` + this.allAudios[i].previewAudio;
+    }
+  }
+
+  liked(comment) {
+    comment.like = !comment.like;
+    if (comment.like) comment.likes++;
+    else if (!comment.like) comment.likes--;
+  }
 
 }

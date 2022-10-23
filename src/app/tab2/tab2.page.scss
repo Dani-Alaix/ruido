@@ -35,6 +35,12 @@
             }
         }
     }
+    p {
+        color: #808080;
+    }
+    span {
+        color: var(--ion-color-secondary) ;
+    }
 }
 .comments {
     max-width: 800px;

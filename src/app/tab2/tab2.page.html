@@ -49,8 +49,46 @@
         </ion-item>
         <ion-item>
           <ion-buttons mode="ios">
-            <ion-button (click)="liked(item)" [style.color]="item.like? '#e52f1e':'#808080'">Me gusta</ion-button>
-            <ion-button>Responder</ion-button>
+            <ion-button (click)="liked(item)" [style.color]="item.like? '#e52f1e':'#808080'">
+              <ion-icon name="heart"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-item>
+      </div>
+    </ion-list>
+  </div>
+
+  <div class="main-content">
+    <ion-list>
+      <ion-item *ngFor="let audio of allAudios; index as i">
+        <p><span class="orange">Audio: </span>{{audio.name}}</p>
+        <audio controls="controls">
+          <source [src]="playAudio[i]" />
+        </audio>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <div class="comments" *ngIf="currentAudio">
+    <ion-list>
+      <div class="posts" *ngFor="let item of currentAudio.comments">
+        <ion-item class="title" lines="none">
+          <ion-avatar>
+            <img src="{{item.profile}}">
+          </ion-avatar>
+          <ion-text>
+            <h3>{{item.user}}</h3>
+            <p>2h</p>
+          </ion-text>
+        </ion-item>
+        <ion-item lines="none">
+          <p>{{item.comment}}</p>
+        </ion-item>
+        <ion-item>
+          <ion-buttons mode="ios">
+            <ion-button (click)="liked(item)" [style.color]="item.like? '#e52f1e':'#808080'">
+              <ion-icon name="heart"></ion-icon>
+            </ion-button>
           </ion-buttons>
         </ion-item>
       </div>
