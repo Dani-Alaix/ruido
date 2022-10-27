@@ -19,7 +19,7 @@
       <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
     </ion-button>
     <ion-slides #slider *ngIf="allPhotos&&allPhotos.length!=0" [options]="slideOpts">
-      <ion-slide button *ngFor="let photo of allPhotos">
+      <ion-slide button *ngFor="let photo of allPhotos; index as i">
         <ion-card class="imgPlayAudio" (click)="selectImg(photo)">
           <!-- <img src="data:image/png;base64,{{photo.previewSrc}}" alt=""> -->
           <img src="{{photo.previewSrc}}" alt="">
