@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonSlides } from '@ionic/angular';
-import { MediaService } from '../core/services/media.service';
 
 @Component({
   selector: 'app-tab2',
@@ -117,7 +116,7 @@ export class Tab2Page {
   currentAudio;
   playAudio = [];
 
-  constructor(private mediaService: MediaService) { }
+  constructor() { }
 
   //ngOnInit() { }
 
