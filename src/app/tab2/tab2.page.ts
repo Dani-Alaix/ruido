@@ -8,7 +8,10 @@ import { IonSlides } from '@ionic/angular';
 })
 export class Tab2Page {
   @ViewChild('slider') slider: IonSlides;
-
+  slideOpts = {
+    slidesPerView: "auto"
+  }
+  
   allPhotos = [
     {
       id: 1,
