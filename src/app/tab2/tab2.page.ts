@@ -15,6 +15,8 @@ export class Tab2Page {
   allMedia = [    
     {
       id: 1,
+      name: '',
+      description: '',
       isImage: true,
       isVideo: false,
       previewSrc: '../../assets/photos/1.jpg',
@@ -35,6 +37,8 @@ export class Tab2Page {
     },
     {
       id: 2,
+      name: '',
+      description: '',
       isImage: false,
       isVideo: false,
       previewSrc: '../../assets/audios/1.mp3',
@@ -55,6 +59,8 @@ export class Tab2Page {
     },
     {
       id: 3,
+      name: '',
+      description: '',
       isImage: true,
       isVideo: false,
       previewSrc: '../../assets/photos/2.jpg',
@@ -75,6 +81,8 @@ export class Tab2Page {
     },
     {
       id: 4,
+      name: '',
+      description: '',
       isImage: true,
       isVideo: false,
       previewSrc: '../../assets/photos/3.jpg',
@@ -100,6 +108,8 @@ export class Tab2Page {
     },
     {
       id: 5,
+      name: '',
+      description: '',
       isImage: true,
       isVideo: false,
       previewSrc: '../../assets/photos/4.jpg',
@@ -120,6 +130,8 @@ export class Tab2Page {
     },
     {
       id: 6,
+      name: '',
+      description: '',
       isImage: true,
       isVideo: false,
       previewSrc: '../../assets/photos/5.jpg',
