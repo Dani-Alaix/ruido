@@ -12,18 +12,15 @@ export class Tab2Page {
     slidesPerView: "auto"
   }
   
-  allPhotos = [
+  allMedia = [    
     {
       id: 1,
-      previewSrc: '../../assets/photos/1665871422376.jpg',
-      previewAudio: '../../assets/audios/05. Adele - Set Fire to the Rain.mp3',
+      isImage: true,
+      isVideo: false,
+      previewSrc: '../../assets/photos/1.jpg',
+      previewAudio: '',
       comments: [
         {
-          profile: 'https://picsum.photos/50/50',
-          user: 'Daniela Cubides',
-          comment: 'consectetur adipiscing elit. Suspendisse tincidunt turpis sit amet massa egestas, in vestibulum lorem scelerisque',
-          like: false
-        }, {
           profile: 'https://picsum.photos/50/50',
           user: 'Diego Sánchez',
           comment: 'consectetur adipiscing elit. Suspendisse tincidunt turpis sit amet massa egestas, in vestibulum lorem scelerisque',
@@ -38,12 +35,14 @@ export class Tab2Page {
     },
     {
       id: 2,
-      previewSrc: '../../assets/photos/1665871422388.jpg',
-      previewAudio: '../../assets/audios/01. Adele - Rolling in the Deep.mp3',
+      isImage: false,
+      isVideo: false,
+      previewSrc: '../../assets/audios/1.mp3',
+      previewAudio: '',
       comments: [
         {
           profile: 'https://picsum.photos/50/50',
-          user: 'Diego Sánchez',
+          user: 'Daniela Cubides',
           comment: 'consectetur adipiscing elit. Suspendisse tincidunt turpis sit amet massa egestas, in vestibulum lorem scelerisque',
           like: false
         }, {
@@ -56,8 +55,10 @@ export class Tab2Page {
     },
     {
       id: 3,
-      previewSrc: '../../assets/photos/DSC_0069.jpg',
-      previewAudio: '../../assets/audios/05. Adele - Set Fire to the Rain.mp3',
+      isImage: true,
+      isVideo: false,
+      previewSrc: '../../assets/photos/2.jpg',
+      previewAudio: '',
       comments: [
         {
           profile: 'https://picsum.photos/50/50',
@@ -74,8 +75,10 @@ export class Tab2Page {
     },
     {
       id: 4,
-      previewSrc: '../../assets/photos/DSC_0245.JPG',
-      previewAudio: '../../assets/audios/01. Adele - Rolling in the Deep.mp3',
+      isImage: true,
+      isVideo: false,
+      previewSrc: '../../assets/photos/3.jpg',
+      previewAudio: '',
       comments: [
         {
           profile: 'https://picsum.photos/50/50',
@@ -97,8 +100,10 @@ export class Tab2Page {
     },
     {
       id: 5,
-      previewSrc: '../../assets/photos/DSC_0284.jpg',
-      previewAudio: '../../assets/audios/05. Adele - Set Fire to the Rain.mp3',
+      isImage: true,
+      isVideo: false,
+      previewSrc: '../../assets/photos/4.jpg',
+      previewAudio: '',
       comments: [
         {
           profile: 'https://picsum.photos/50/50',
@@ -113,9 +118,34 @@ export class Tab2Page {
         }
       ]
     },
+    {
+      id: 6,
+      isImage: true,
+      isVideo: false,
+      previewSrc: '../../assets/photos/5.jpg',
+      previewAudio: '',
+      comments: [
+        {
+          profile: 'https://picsum.photos/50/50',
+          user: 'Daniela Cubides',
+          comment: 'consectetur adipiscing elit. Suspendisse tincidunt turpis sit amet massa egestas, in vestibulum lorem scelerisque',
+          like: false
+        }, {
+          profile: 'https://picsum.photos/50/50',
+          user: 'Diego Sánchez',
+          comment: 'consectetur adipiscing elit. Suspendisse tincidunt turpis sit amet massa egestas, in vestibulum lorem scelerisque',
+          like: false
+        }, {
+          profile: 'https://picsum.photos/50/50',
+          user: 'Ernesto Perez',
+          comment: 'consectetur adipiscing elit. Suspendisse tincidunt turpis sit amet massa egestas, in vestibulum lorem scelerisque',
+          like: false
+        }
+      ]
+    },
   ]
 
-  currentImage;
+  currentMedia;
   currentAudio;
   playAudio = [];
 
@@ -123,15 +153,12 @@ export class Tab2Page {
 
   //ngOnInit() { }
 
-  selectImg(photo) {
-    console.log("select photo:", photo);
-    this.currentImage = photo;
-
-    this.play(photo.previewAudio);
-
+  selectMedia(file) {
+    console.log("select media:", file);
+    this.currentMedia = file;
   }
 
-  play(url) {
+/*   play(url) {
 
     for (let i = 0; i < this.allPhotos.length; i++) {
       if (this.allPhotos[i].previewAudio != '' || this.allPhotos[i].previewAudio != null) {
@@ -153,7 +180,7 @@ export class Tab2Page {
 
 
 
-  }
+  } */
 
   liked(comment) {
     comment.like = !comment.like;

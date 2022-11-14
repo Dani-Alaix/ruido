@@ -18,13 +18,18 @@
     <ion-button color="light" shape="round" class="arrow-left" (click)="slider.slidePrev()">
       <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
     </ion-button>
-    <ion-slides #slider *ngIf="allPhotos&&allPhotos.length!=0" [options]="slideOpts">
-      <ion-slide button *ngFor="let photo of allPhotos; index as i">
-        <ion-card class="imgPlayAudio" (click)="selectImg(photo)">
-          <!-- <img src="data:image/png;base64,{{photo.previewSrc}}" alt=""> -->
-          <img src="{{photo.previewSrc}}" alt="">
+    <ion-slides #slider *ngIf="allMedia&&allMedia.length!=0" [options]="slideOpts">
+      <ion-slide button *ngFor="let file of allMedia; index as i">
+        <ion-card class="imgPlayAudio" (click)="selectMedia(file)">
+          <!-- <img src="data:image/png;base64,{{file.previewSrc}}" alt=""> -->
 
-          <audio id="audio" controls="controls">
+          <img *ngIf="isImage&&!isVideo" src="{{file.previewSrc}}" alt="">
+
+          <video *ngIf="!isImage&&isVideo" controls>
+            <source [src]="video" type="video/mp4">
+          </video>
+          
+          <audio *ngIf="!isImage&&!isVideo" controls="controls">
             <source [src]="playAudio[i]" />
           </audio>
 
