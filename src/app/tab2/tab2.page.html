@@ -19,8 +19,9 @@
       <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
     </ion-button>
     <ion-slides #slider *ngIf="allMedia&&allMedia.length!=0" [options]="slideOpts">
-      <ion-slide button *ngFor="let file of allMedia; index as i">
-        <ion-card class="imgPlayAudio" (click)="selectMedia(file)">
+      <ion-slide button *ngFor="let file of allMedia; index as i" fxLayout="column">
+
+        <ion-card (click)="selectMedia(file)" class="imgPlayAudio">
           <!-- <img src="data:image/png;base64,{{file.previewSrc}}" alt=""> -->
 
           <img *ngIf="file.isImage&&!file.isVideo" src="{{file.previewSrc}}" alt="">
@@ -29,14 +30,19 @@
             <source [src]="video" type="video/mp4">
           </video>
           
+          <!-- <audio *ngIf="!file.isImage&&!file.isVideo" controls="controls" #figAudio>
+            <source [src]="playAudio[i]" type="audio/mp3" />
+          </audio> -->
           <audio *ngIf="!file.isImage&&!file.isVideo" controls="controls">
-            <source [src]="playAudio[i]" />
+            <source src="{{file.previewAudio}}" type="audio/mp3" />
           </audio>
 
+
         </ion-card>
+        
         <ion-list>
           <ion-item>
-            <ion-label color="primary">Nombre
+            <ion-label color="primary">Titulo
               <p>{{file.name}}</p>
             </ion-label>
           </ion-item>

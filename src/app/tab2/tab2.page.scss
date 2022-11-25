@@ -18,20 +18,35 @@
     }
     ion-slide {
         text-align: left;
-        max-width: 350px;
-        min-width: 350px;
+        max-width: 420px;
+        min-width: 420px;
         margin-left: 20px;
         ion-card{
             cursor: pointer;
             position: relative;
             margin: 0.5rem;
-            width: 310px;
-            height: 310px;
+            width: 400px;
+            height: 350px;
             overflow: hidden;
             img {
                 object-fit: cover;
                 min-height: 100%;
                 min-width: 100%;
+            }
+            audio {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin: auto;
+                width: 90%;
+            }
+        }
+        ion-list {
+            width: 420px;
+            ion-label {
+                white-space: break-spaces;
             }
         }
     }
